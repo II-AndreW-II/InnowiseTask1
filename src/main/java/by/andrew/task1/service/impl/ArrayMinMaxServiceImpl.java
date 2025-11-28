@@ -8,46 +8,35 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ArrayMinMaxServiceImpl implements ArrayMinMaxService {
-    private static final Logger logger = LogManager.getLogger(ArrayMinMaxServiceImpl.class);
+  private static final Logger logger = LogManager.getLogger(ArrayMinMaxServiceImpl.class);
 
-    @Override
-    public int findMin(CustomArray customArray) throws CustomArrayException {
-        if (customArray == null || customArray.length() == 0) {
-            logger.error("Cannot find min: array is null or empty");
-            throw new CustomArrayException("Array is null or empty");
-        }
+  @Override
+  public int findMin(CustomArray customArray) throws CustomArrayException {
+    int[] array = customArray.getArray();
+    int min = array[0];
 
-        int[] array = customArray.getArray();
-        int min = array[0];
-
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] < min) {
-                min = array[i];
-            }
-        }
-
-        logger.info("Min value found: {}", min);
-        return min;
+    for (int i = 1; i < array.length; i++) {
+      if (array[i] < min) {
+        min = array[i];
+      }
     }
 
-    @Override
-    public int findMax(CustomArray customArray) throws CustomArrayException {
-        if (customArray == null || customArray.length() == 0) {
-            logger.error("Cannot find max: array is null or empty");
-            throw new CustomArrayException("Array is null or empty");
-        }
+    logger.info("Min value found: {}", min);
+    return min;
+  }
 
-        int[] array = customArray.getArray();
-        int max = array[0];
+  @Override
+  public int findMax(CustomArray customArray) throws CustomArrayException {
+    int[] array = customArray.getArray();
+    int max = array[0];
 
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] > max) {
-                max = array[i];
-            }
-        }
-
-        logger.info("Max value found: {}", max);
-        return max;
+    for (int i = 1; i < array.length; i++) {
+      if (array[i] > max) {
+          max = array[i];
+      }
     }
+
+    logger.info("Max value found: {}", max);
+    return max;
+  }
 }
-
