@@ -7,7 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ArraySumServiceImpl implements ArraySumService {
-  private static final Logger logger = LogManager.getLogger(ArraySumServiceImpl.class);
+  private static final Logger logger = LogManager.getLogger();
 
   @Override
   public long calculateSum(CustomArray customArray) throws CustomArrayException {

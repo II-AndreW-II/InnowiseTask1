@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ArrayMinMaxServiceImpl implements ArrayMinMaxService {
-  private static final Logger logger = LogManager.getLogger(ArrayMinMaxServiceImpl.class);
+  private static final Logger logger = LogManager.getLogger();
 
   @Override
   public int findMin(CustomArray customArray) throws CustomArrayException {

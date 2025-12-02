@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.regex.Pattern;
 
 public class ArrayValidatorImpl implements ArrayValidator {
-  private static final Logger logger = LogManager.getLogger(ArrayValidatorImpl.class);
+  private static final Logger logger = LogManager.getLogger();
   private static final String STRING_LINE_REGEX = "^\\s*((-?\\d+)(\\s*[,\\s;\\-]+\\s*-?\\d+)*\\s*)?$";
   
 
