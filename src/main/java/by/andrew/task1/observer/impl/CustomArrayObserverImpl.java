@@ -18,16 +18,25 @@ public class CustomArrayObserverImpl implements CustomArrayObserver {
   private static final Logger LOGGER = LogManager.getLogger();
 
   @Override
-  public void actionPerformed(CustomArrayEvent event) throws CustomArrayException {
+  public void actionPerformed(CustomArrayEvent event){
     CustomArray customArray = event.getSource();
+    if (customArray.length() == 0) {
+      return;
+    }
     ArrayMinMaxService arrayMinMaxService = new ArrayMinMaxServiceImpl();
     ArraySumService arraySumService = new ArraySumServiceImpl();
-    long sum = arraySumService.calculateSum(customArray);
-    int max = arrayMinMaxService.findMax(customArray);
-    int min = arrayMinMaxService.findMin(customArray);
-    CustomSummaryStatistic customSummaryStatistic = new CustomSummaryStatistic(sum, max, min);
-    int id = customArray.getId();
-    Warehouse.getInstance().put(id, customSummaryStatistic);
+    try {
+      long sum;
+      sum = arraySumService.calculateSum(customArray);
+      int max = arrayMinMaxService.findMax(customArray);
+      int min = arrayMinMaxService.findMin(customArray);
+      CustomSummaryStatistic customSummaryStatistic = new CustomSummaryStatistic(sum, max, min);
+      int id = customArray.getId();
+      Warehouse.getInstance().put(id, customSummaryStatistic);
+    } catch (CustomArrayException e) {
+      e.printStackTrace();
+    }
+
     LOGGER.info("Statistics for CustomArray with ID {} have been updated in warehouse", customArray.getId());
   }
 }

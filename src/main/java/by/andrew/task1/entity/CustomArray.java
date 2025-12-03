@@ -56,7 +56,7 @@ public class CustomArray implements CustomArrayObservable {
   }
 
   @Override
-  public void notifyObserver() throws CustomArrayException {
+  public void notifyObserver() {
     if (observer != null) {
       observer.actionPerformed(new CustomArrayEvent(this));
     }

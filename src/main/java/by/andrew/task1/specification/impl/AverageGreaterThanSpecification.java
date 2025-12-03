@@ -7,21 +7,21 @@ import by.andrew.task1.service.impl.ArraySumServiceImpl;
 import by.andrew.task1.specification.Specification;
 
 public class AverageGreaterThanSpecification implements Specification<CustomArray> {
-    private final double value;
-    private final ArraySumService sumService = new ArraySumServiceImpl();
+  private final double value;
+  private final ArraySumService sumService = new ArraySumServiceImpl();
 
-    public AverageGreaterThanSpecification(double value) {
-        this.value = value;
-    }
+  public AverageGreaterThanSpecification(double value) {
+    this.value = value;
+  }
 
-    @Override
-    public boolean isSatisfiedBy(CustomArray array) {
-        try {
-            long sum = sumService.calculateSum(array);
-            double average = (double) sum / array.getArray().length;
-            return average > value;
-        } catch (CustomArrayException e) {
-            return false;
-        }
+  @Override
+  public boolean isSatisfiedBy(CustomArray array) {
+    try {
+      long sum = sumService.calculateSum(array);
+      double average = (double) sum / array.getArray().length;
+      return average > value;
+    } catch (CustomArrayException e) {
+      return false;
     }
+  }
 }

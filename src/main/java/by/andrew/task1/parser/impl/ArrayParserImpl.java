@@ -18,7 +18,7 @@ public class ArrayParserImpl implements ArrayParser{
 
   public CustomArray parseLine(String line) throws CustomArrayException {
     final ArrayValidator validator = new ArrayValidatorImpl();
-    if (validator.isValidLine(line)) {
+    if (!validator.isValidLine(line)) {
       logger.error("Invalid line format: {}", line);
       throw new CustomArrayException("Invalid line format: " + line);
     }
@@ -26,6 +26,7 @@ public class ArrayParserImpl implements ArrayParser{
     String[] parts = line.strip().split(STRING_SEPARATOR_REGEX);
 
     int[] array = Arrays.stream(parts)
+            .filter(part -> !part.isEmpty())
             .mapToInt(Integer::parseInt)
             .toArray();
             

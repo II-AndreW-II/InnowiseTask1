@@ -13,6 +13,9 @@ public class ArrayMinMaxServiceImpl implements ArrayMinMaxService {
   @Override
   public int findMin(CustomArray customArray) throws CustomArrayException {
     int[] array = customArray.getArray();
+    if (array.length == 0) {
+      throw new CustomArrayException("Cannot find minimum of empty array");
+    }
     int min = array[0];
 
     for (int i = 1; i < array.length; i++) {

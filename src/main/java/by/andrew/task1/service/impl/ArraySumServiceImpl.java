@@ -3,6 +3,7 @@ package by.andrew.task1.service.impl;
 import by.andrew.task1.entity.CustomArray;
 import by.andrew.task1.exception.CustomArrayException;
 import by.andrew.task1.service.ArraySumService;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,4 +23,3 @@ public class ArraySumServiceImpl implements ArraySumService {
     return sum;
   }
 }
-

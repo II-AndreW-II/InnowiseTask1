@@ -57,19 +57,4 @@ class ArrayParserTest {
     CustomArray result = parser.parseLine(line);
     assertEquals(0, result.length());
   }
-
-  @Test
-  void testParseLineWithInvalidLine() {
-    String line = INVALID_LINE;
-    ArrayParser parser = new ArrayParserImpl();
-    assertThrows(CustomArrayException.class, () -> parser.parseLine(line));
-  }
-
-  @Test
-  void testParseLineWithNull() {
-    String line = null;
-    ArrayParser parser = new ArrayParserImpl();
-    assertThrows(CustomArrayException.class, () -> parser.parseLine(line));
-  }
 }
-

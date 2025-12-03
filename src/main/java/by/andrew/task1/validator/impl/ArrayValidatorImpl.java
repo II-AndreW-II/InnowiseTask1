@@ -20,4 +20,3 @@ public class ArrayValidatorImpl implements ArrayValidator {
     return isValid;
   }
 }
-

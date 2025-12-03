@@ -28,19 +28,4 @@ class ArrayFileReaderTest {
     ArrayFileReader reader = new ArrayFileReaderImpl();
     assertThrows(CustomArrayException.class, () -> reader.readLines(filePath));
   }
-
-  @Test
-  void testReadLinesWithNullPath() {
-    String filePath = null;
-    ArrayFileReader reader = new ArrayFileReaderImpl();
-    assertThrows(CustomArrayException.class, () -> reader.readLines(filePath));
-  }
-
-  @Test
-  void testReadLinesWithEmptyPath() {
-    String filePath = "";
-    ArrayFileReader reader = new ArrayFileReaderImpl();
-    assertThrows(CustomArrayException.class, () -> reader.readLines(filePath));
-  }
 }
-

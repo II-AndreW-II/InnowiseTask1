@@ -30,5 +30,9 @@ public class Warehouse {
 
   public CustomSummaryStatistic remove(int id) {
     return statisticMap.remove(id);
-}
+  }
+
+  public Map<Integer, CustomSummaryStatistic> getAllStatistics() {
+    return new HashMap<>(statisticMap);
+  }
 }

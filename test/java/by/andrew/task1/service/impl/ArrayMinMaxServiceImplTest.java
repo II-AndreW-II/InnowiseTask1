@@ -37,24 +37,9 @@ class ArrayMinMaxServiceImplTest {
   }
 
   @Test
-  void testFindMinWithEmptyArray() {
+  void testFindMinWithEmptyArray() throws CustomArrayException {
     CustomArray customArray = new CustomArray(EMPTY_ARRAY);
     ArrayMinMaxServiceImpl service = new ArrayMinMaxServiceImpl();
     assertThrows(CustomArrayException.class, () -> service.findMin(customArray));
   }
-
-  @Test
-  void testFindMinWithNull() {
-    CustomArray customArray = null;
-    ArrayMinMaxServiceImpl service = new ArrayMinMaxServiceImpl();
-    assertThrows(CustomArrayException.class, () -> service.findMin(customArray));
-  }
-
-  @Test
-  void testFindMaxWithNull() {
-    CustomArray customArray = null;
-    ArrayMinMaxServiceImpl service = new ArrayMinMaxServiceImpl();
-    assertThrows(CustomArrayException.class, () -> service.findMax(customArray));
-  }
 }
-

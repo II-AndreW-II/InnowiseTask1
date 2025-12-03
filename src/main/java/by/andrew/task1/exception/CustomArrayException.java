@@ -17,4 +17,3 @@ public class CustomArrayException extends Exception {
     super(cause);
   }
 }
-

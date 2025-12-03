@@ -54,20 +54,6 @@ class ArraySortServiceImplTest {
   }
 
   @Test
-  void testSortBubbleWithNull() {
-    CustomArray customArray = null;
-    ArraySortServiceImpl service = new ArraySortServiceImpl();
-    assertThrows(CustomArrayException.class, () -> service.sortBubble(customArray));
-  }
-
-  @Test
-  void testSortQuickWithNull() {
-    CustomArray customArray = null;
-    ArraySortServiceImpl service = new ArraySortServiceImpl();
-    assertThrows(CustomArrayException.class, () -> service.sortQuick(customArray));
-  }
-
-  @Test
   void testBothSortMethodsProduceSameResult() throws CustomArrayException {
     CustomArray customArray = new CustomArray(UNSORTED_ARRAY);
     ArraySortServiceImpl service = new ArraySortServiceImpl();

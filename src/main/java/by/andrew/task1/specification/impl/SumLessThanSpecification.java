@@ -7,19 +7,19 @@ import by.andrew.task1.service.impl.ArraySumServiceImpl;
 import by.andrew.task1.specification.Specification;
 
 public class SumLessThanSpecification implements Specification<CustomArray> {
-    private final long value;
-    private final ArraySumService sumService = new ArraySumServiceImpl();
+  private final long value;
+  private final ArraySumService sumService = new ArraySumServiceImpl();
 
-    public SumLessThanSpecification(long value) {
-        this.value = value;
-    }
+  public SumLessThanSpecification(long value) {
+    this.value = value;
+  }
 
-    @Override
-    public boolean isSatisfiedBy(CustomArray array) {
-        try {
-            return sumService.calculateSum(array) < value;
-        } catch (CustomArrayException e) {
-            return false;
-        }
+  @Override
+  public boolean isSatisfiedBy(CustomArray array) {
+    try {
+      return sumService.calculateSum(array) < value;
+    } catch (CustomArrayException e) {
+      return false;
     }
+  }
 }

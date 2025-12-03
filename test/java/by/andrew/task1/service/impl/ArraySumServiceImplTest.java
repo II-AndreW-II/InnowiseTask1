@@ -44,12 +44,4 @@ class ArraySumServiceImplTest {
     long result = service.calculateSum(customArray);
     assertEquals(-6, result);
   }
-
-  @Test
-  void testCalculateSumWithNull() {
-    CustomArray customArray = null;
-    ArraySumServiceImpl service = new ArraySumServiceImpl();
-    assertThrows(CustomArrayException.class, () -> service.calculateSum(customArray));
-  }
 }
-

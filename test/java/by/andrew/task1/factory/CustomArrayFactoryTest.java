@@ -1,6 +1,7 @@
 package by.andrew.task1.factory;
 
 import by.andrew.task1.entity.CustomArray;
+import by.andrew.task1.exception.CustomArrayException;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +11,7 @@ class CustomArrayFactoryTest {
   private static final int[] TEST_ARRAY = {1, 2, 3, 4, 5};
 
   @Test
-  void testCreateCustomArray() {
+  void testCreateCustomArray() throws CustomArrayException {
     int[] array = TEST_ARRAY;
     CustomArray result = new CustomArray(array);
     assertNotNull(result);
@@ -19,11 +20,10 @@ class CustomArrayFactoryTest {
   }
 
   @Test
-  void testCreateCustomArrayWithNull() {
+  void testCreateCustomArrayWithNull() throws CustomArrayException {
     int[] array = null;
     CustomArray result = new CustomArray(array);
     assertNotNull(result);
     assertEquals(0, result.length());
   }
 }
-

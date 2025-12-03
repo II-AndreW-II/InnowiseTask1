@@ -8,6 +8,9 @@ public class CustomArrayEvent extends EventObject {
 
   public CustomArrayEvent(CustomArray source) {
     super(source);
+    if (source == null) {
+        throw new IllegalArgumentException("Source cannot be null");
+    }
   }
 
   @Override

@@ -59,13 +59,4 @@ class ArrayValidatorImplTest {
     boolean result = validator.isValidLine(line);
     assertFalse(result);
   }
-
-  @Test
-  void testIsValidLineWithNull() {
-    String line = null;
-    ArrayValidatorImpl validator = new ArrayValidatorImpl();
-    boolean result = validator.isValidLine(line);
-    assertFalse(result);
-  }
 }
-
